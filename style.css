@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url(images.jpeg) no-repeat center;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion{
+    width: 70%;
+    background: #fff;
+    height: auto;
+    padding: 20px;  
+    border-radius: 15px;
+}
+
+.accordion header{
+    text-align: center;
+}
+
+.accordion .container{
+    margin: 2em;
+}
+
+.accordion .question{
+    font-size: 1.5rem;
+    margin: .25em;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion .question::after{
+    content: "+";
+    right: 0;
+    position: absolute; 
+}
+
+.accordion .container .answer{
+    padding-top: 15px;
+    font-size: 22px;
+    line-height: 1.5;
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+/* Javascript styling */
+
+.accordion .container.active .answer{
+    height: 150px;
+} 
+
+.accordion .container.active .question::after{
+    content: '-';
+}
